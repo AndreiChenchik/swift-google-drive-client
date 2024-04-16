@@ -6,13 +6,15 @@ public struct File: Sendable, Equatable, Identifiable, Codable {
     mimeType: String,
     name: String,
     createdTime: Date,
-    modifiedTime: Date
+    modifiedTime: Date,
+    thumbnailLink: String?
   ) {
     self.id = id
     self.mimeType = mimeType
     self.name = name
     self.createdTime = createdTime
     self.modifiedTime = modifiedTime
+    self.thumbnailLink = thumbnailLink
   }
 
   public var id: String
@@ -20,6 +22,7 @@ public struct File: Sendable, Equatable, Identifiable, Codable {
   public var name: String
   public var createdTime: Date
   public var modifiedTime: Date
+  public var thumbnailLink: String?
 }
 
 extension File {
@@ -29,5 +32,6 @@ extension File {
     "name",
     "createdTime",
     "modifiedTime",
+    "thumbnailLink"
   ].joined(separator: ",")
 }
